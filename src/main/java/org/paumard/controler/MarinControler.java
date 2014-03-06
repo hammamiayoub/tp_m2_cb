@@ -24,6 +24,13 @@ public class MarinControler implements Serializable {
 		System.out.println("Marin persisté : " + id) ;
 	}
 	
+	//Ajout d'une méthode de listing des marin
+	public List<Marin> selectAll() {
+		List<Marin> marins = getEntityManager().createQuery(
+				"select marin from Marin marin").getResultList();
+		return marin;
+	}
+	
 	public Marin getMarin() {
 		return marin;
 	}
