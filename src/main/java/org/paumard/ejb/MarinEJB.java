@@ -17,4 +17,12 @@ public class MarinEJB {
 		em.persist(marin) ;
 		return marin.getId() ;
  	}
+ 	
+ 	public void delete(Marin m) {
+	getEntityManager().getTransaction().begin();
+	m = getEntityManager().merge(m);
+	getEntityManager().remove(m);
+	getEntityManager().getTransaction().commit();
+	}
+	
 }
