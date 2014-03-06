@@ -18,6 +18,13 @@ public class MarinEJB {
 		return marin.getId() ;
  	}
  	
+ 	//Ajout d'une méthode de listing des marin
+	public List<Marin> selectAll() {
+		List<Marin> marins = getEntityManager().createQuery(
+				"select marin from Marin marin").getResultList();
+		return marin;
+	}
+ 	//Ajout d'une méthode de suppression de marin
  	public void delete(Marin m) {
 	getEntityManager().getTransaction().begin();
 	m = getEntityManager().merge(m);
