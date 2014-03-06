@@ -30,6 +30,14 @@ public class MarinControler implements Serializable {
 				"select marin from Marin marin").getResultList();
 		return marin;
 	}
+	//Ajout d'une méthode Delete marin dans le controleur
+	public String deleteMarin() {
+	Marin m = (Marin) marins.getRowData();
+	mEJB.delete(m);
+	marins.setWrappedData(mEJB.selectAll());
+	return null;
+}
+}
 	
 	public Marin getMarin() {
 		return marin;
