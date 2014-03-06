@@ -57,6 +57,14 @@ public class Marin implements Serializable {
 	public void setAge(int age) {
 		this.age = age;
 	}
+	//Initialisation de la liste des marins dans le model
+	public List<Marin> getMarins() {
+	if(marins==null){
+		marins = mEJB.findAll();
+	}
+	return marins;
+}
+
 
 	@Override
 	public String toString() {
