@@ -25,10 +25,8 @@ public class MarinControler implements Serializable {
 	}
 	
 	//Ajout d'une méthode de listing des marin
-	public List<Marin> selectAll() {
-		List<Marin> marins = getEntityManager().createQuery(
-				"select marin from Marin marin").getResultList();
-		return marin;
+	private MarinEJB mEJB = new MarinEJB();
+	private List<Marin> marins;
 	}
 	//Ajout d'une méthode Delete marin dans le controleur
 	public String deleteMarin() {
